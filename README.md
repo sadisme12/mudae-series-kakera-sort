@@ -1,6 +1,8 @@
 # Mudae Harem Sortmarry
 
 A program made to sort your entire collection by kakera and group characters from the same series together.
+Warning you can also use "$sm$mmk=" but different from this command it keeps series together instead of calculating kakeras
+
 
 ## How to use
 
@@ -31,6 +33,14 @@ Output:
 ```
 $sm $ Asia Argento $ Sword Maiden $ Guild Girl $ Nerissa Ravencroft
 ```
+
+Warning
+
+You can also use $sm$mmk=, but it only sorts characters by kakera without keeping characters from the same series together.
+
+Alternatively, $sm$mma= only sorts characters by series.
+
+This program does both.
 
 That's all!
 
