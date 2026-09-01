@@ -1,8 +1,6 @@
 # Mudae Harem Sortmarry
 
 A program made to sort your entire collection by kakera and group characters from the same series together.
-Warning you can also use "$sm$mmk=" but different from this command it keeps series together instead of calculating kakeras
-
 
 ## How to use
 
