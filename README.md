@@ -1,6 +1,8 @@
+# Mudae Harem Sortmarry
+
 A program made to sort your entire collection by kakera and group characters from the same series together.
 
-How to use
+## How to use
 
 1. Use `$mmak=` in Mudae.
 2. Copy the entire list.
@@ -8,11 +10,11 @@ How to use
 4. Click **SORT**.
 5. Copy the generated `$sm` command and paste it into Mudae.
 
-Example
+### Example
 
 Input:
 
-```text
+```
 Goblin Slayer - 2/24
 Guild Girl 91 ka
 Sword Maiden 135 ka
@@ -22,10 +24,13 @@ Asia Argento 226 ka
 
 hololive - 1/95
 Nerissa Ravencroft 123 ka
+```
 
 Output:
 
+```
 $sm $ Asia Argento $ Sword Maiden $ Guild Girl $ Nerissa Ravencroft
+```
 
 That's all!
 
