@@ -5,7 +5,7 @@ How to use
 1. Use `$mmak=` in Mudae.
 2. Copy the entire list.
 3. Paste it into the first text box in Sortmarry.
-4. Click **ORGANIZE**.
+4. Click **SORT**.
 5. Copy the generated `$sm` command and paste it into Mudae.
 
 Example
