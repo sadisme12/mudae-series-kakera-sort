@@ -8,7 +8,7 @@ A program made to sort your entire collection by kakera and group characters fro
 2. Copy the entire list.
 3. Paste it into the first text box in Sortmarry.
 4. Click **SORT**.
-5. Copy the generated `$sm` command and paste it into Mudae.
+5. Copy the generated `$sm` or `$smp` command and paste it into Mudae.
 
 ### Example
 
