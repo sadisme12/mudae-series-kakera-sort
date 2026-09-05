@@ -2,13 +2,9 @@ import tkinter as tk
 from tkinter import ttk, messagebox
 import re
 
-
 LIMITE_COMANDO = 1800
 
-
-# ============================================================
 # LER $MMAK=
-# ============================================================
 
 def ler_mmak(texto):
 
@@ -27,12 +23,7 @@ def ler_mmak(texto):
         if not linha:
             continue
 
-        # ----------------------------------------------------
         # Verifica se a linha começa com uma nova série
-        #
-        # Exemplo:
-        # Goblin Slayer - 2/24
-        # ----------------------------------------------------
 
         match_serie = re.match(
             r"^(.*?)\s+-\s+(\d+/\d+)\s*$",
@@ -43,15 +34,10 @@ def ler_mmak(texto):
             serie_atual = match_serie.group(1).strip()
             continue
 
-        # ----------------------------------------------------
         # Caso a série e o personagem estejam na mesma linha
-        #
-        # Exemplo:
-        # Blend S - 1/10 Miu Amano 93 ka
-        # ----------------------------------------------------
 
         match_mesma_linha = re.match(
-            r"^(.*?)\s+-\s+\d+/\d+\s+(.+?)\s+(\d+)\s+ka$",
+            r"^(.*?)\s+-\s+\d+/\d+\s+(.+?)\s+([\d,]+)\s+ka$",
             linha,
             re.IGNORECASE
         )
@@ -60,7 +46,7 @@ def ler_mmak(texto):
 
             serie = match_mesma_linha.group(1).strip()
             nome = match_mesma_linha.group(2).strip()
-            kakera = int(match_mesma_linha.group(3))
+            kakera = int(match_mesma_linha.group(3).replace(",", ""))
 
             personagens.append({
                 "serie": serie,
@@ -71,18 +57,12 @@ def ler_mmak(texto):
             serie_atual = serie
             continue
 
-        # ----------------------------------------------------
         # Personagem pertencente à série atual
-        #
-        # Exemplo:
-        # Brunhilde 109 ka
-        # Goll 49 ka
-        # ----------------------------------------------------
 
         if serie_atual:
 
             match_personagem = re.match(
-                r"^(.+?)\s+(\d+)\s+ka$",
+                r"^(.+?)\s+([\d,]+)\s+ka$",
                 linha,
                 re.IGNORECASE
             )
@@ -90,7 +70,7 @@ def ler_mmak(texto):
             if match_personagem:
 
                 nome = match_personagem.group(1).strip()
-                kakera = int(match_personagem.group(2))
+                kakera = int(match_personagem.group(2).replace(",", ""))
 
                 personagens.append({
                     "serie": serie_atual,
@@ -101,9 +81,7 @@ def ler_mmak(texto):
     return personagens
 
 
-# ============================================================
 # ORGANIZAR
-# ============================================================
 
 def organizar(personagens):
 
@@ -119,10 +97,8 @@ def organizar(personagens):
 
         series[serie].append(personagem)
 
-    # --------------------------------------------------------
     # Dentro de cada série:
     # maior kakera primeiro
-    # --------------------------------------------------------
 
     for serie in series:
 
@@ -133,9 +109,7 @@ def organizar(personagens):
             )
         )
 
-    # --------------------------------------------------------
     # A MAIOR kakera da série decide onde a série inteira fica
-    # --------------------------------------------------------
 
     ordem_series = sorted(
         series.keys(),
@@ -155,9 +129,7 @@ def organizar(personagens):
     return resultado
 
 
-# ============================================================
 # GERAR COMANDOS
-# ============================================================
 
 def gerar_comandos(personagens):
 
@@ -323,9 +295,7 @@ def limpar():
     status.set("Pronto.")
 
 
-# ============================================================
 # HUD
-# ============================================================
 
 janela = tk.Tk()
 
@@ -413,9 +383,7 @@ ttk.Button(
 )
 
 
-# -----------------------------
 # COMMANDS
-# -----------------------------
 
 ttk.Label(
     janela,
@@ -479,13 +447,10 @@ caixa_ordem.pack(
 )
 
 
-# -----------------------------
 # STATUS
-# -----------------------------
 
 status = tk.StringVar()
 status.set("Ready.")
-
 
 ttk.Label(
     janela,
