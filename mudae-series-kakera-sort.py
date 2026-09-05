@@ -140,7 +140,7 @@ def gerar_comandos(personagens):
 
     comandos = []
 
-    atual = "$sm"
+    atual = "$smp"
 
     for i, nome in enumerate(nomes):
 
@@ -189,9 +189,7 @@ def criar_resultado(personagens):
     return "\n".join(linhas)
 
 
-# ============================================================
 # ORGANIZAR BOTÃO
-# ============================================================
 
 def executar():
 
@@ -255,9 +253,7 @@ def executar():
     )
 
 
-# ============================================================
 # COPIAR
-# ============================================================
 
 def copiar_comandos():
 
@@ -303,9 +299,7 @@ janela.title("Mudae SortMarry")
 janela.geometry("850x650")
 janela.minsize(650, 500)
 
-# -----------------------------
 # TÍTULO
-# -----------------------------
 
 titulo = ttk.Label(
     janela,
@@ -323,10 +317,7 @@ subtitulo = ttk.Label(
 
 subtitulo.pack(pady=(0, 8))
 
-
-# -----------------------------
 # INPUT
-# -----------------------------
 
 ttk.Label(
     janela,
@@ -352,9 +343,7 @@ caixa_entrada.pack(
 )
 
 
-# -----------------------------
 # BOTÕES
-# -----------------------------
 
 frame_botoes = ttk.Frame(janela)
 
