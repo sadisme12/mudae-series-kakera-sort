@@ -38,7 +38,7 @@ You can also use $sm$mmk=, but it only sorts characters by kakera without keepin
 
 Alternatively, $sm$mma= only sorts characters by series.
 
-This can also be used to prevent accidental divorces by using $divorceallbut name1$name2, but be really careful when using it.
+This can also be used to divorces using $divorceallbut name1$name2, but be really careful when using it.
 
 This program does both.
 
