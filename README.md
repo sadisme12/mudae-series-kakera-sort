@@ -4,7 +4,7 @@ A program made to sort your entire collection by kakera and group characters fro
 
 ## How to use
 
-1. Use `$mmak=` in Mudae.
+1. Use `$mmak` or `$mmak-s` in Mudae.
 2. Copy the entire list.
 3. Paste it into the first text box in Sortmarry.
 4. Click **SORT**.
